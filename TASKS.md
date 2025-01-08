@@ -1,6 +1,6 @@
 # CodeAlpha INTERNSHIP
 
-TASK 1
+#TASK 1
 Basic Network Sniffer:-
 Build a network sniffer in Python that captures and analyzes network traffic. This project will help you understand how data flows on a network and how network packets are structured.
 
@@ -85,6 +85,15 @@ if __name__ == "__main__":
 
 
 ![image](https://github.com/user-attachments/assets/5e4f714e-f438-4293-a831-1de79f194bb5)
+
+#TASK2
+
+
+
+
+#TASK3
+Secure Coding Review:-
+Choose a programming language and application. Review the code for security vulnerabilities andprovide recommendations for secure coding practices. Use tools like static code analyzers or manual code review.
 
 
 
