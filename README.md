@@ -143,6 +143,8 @@ After this I use the Bandit tool (Static Analysis Tool) for Code Review
 OUTPUT:-
 ![image](https://github.com/user-attachments/assets/f933129e-3c2a-4d51-a35c-550884d38fe0)
 
+![image](https://github.com/user-attachments/assets/1a20888b-7975-4cd5-bc67-0411ed2e2888)
 
+![image](https://github.com/user-attachments/assets/bc698a88-a174-413f-8a00-68dcedfd713e)
 
 
