@@ -95,3 +95,54 @@ if __name__ == "__main__":
 #TASK3
 Secure Coding Review:-
 Choose a programming language and application. Review the code for security vulnerabilities andprovide recommendations for secure coding practices. Use tools like static code analyzers or manual code review.
+
+I have take a random application code for the anaylsis from the open source 
+
+CODE:-
+from flask import Flask, request, jsonify
+import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
+
+app = Flask(__name__)
+
+# Secure connection to the database
+def get_db_connection():
+    conn = sqlite3.connect('example.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+# Secure user data retrieval
+@app.route('/user/<username>', methods=['GET'])
+def get_user(username):
+    conn = get_db_connection()
+    user = conn.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+    conn.close()
+    if user is None:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify({"username": user["username"]})  # Expose only necessary fields
+
+# Secure user addition
+@app.route('/user', methods=['POST'])
+def add_user():
+    data = request.json
+    username = data['username']
+    password = data['password']
+    hashed_password = generate_password_hash(password)  # Hash the password
+    conn = get_db_connection()
+    conn.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, hashed_password))
+    conn.commit()
+    conn.close()
+    return jsonify({"message": "User added"}), 201
+
+if __name__ == "__main__":
+    app.run()  # Remove debug=True for production
+
+
+After this I use the Bandit tool (Static Analysis Tool) for Code Review 
+
+OUTPUT:-
+![image](https://github.com/user-attachments/assets/f933129e-3c2a-4d51-a35c-550884d38fe0)
+
+
+
+
