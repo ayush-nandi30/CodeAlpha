@@ -88,8 +88,7 @@ if __name__ == "__main__":
 ![image](https://github.com/user-attachments/assets/5e4f714e-f438-4293-a831-1de79f194bb5)
 
 #TASK2
-
-
+Presentation on Phishing Awareness Training 
 
 
 #TASK3 {The task has been submit in the form of Task_Report in pdf.}
